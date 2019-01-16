@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewAuthHeaderGuideline"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4"/>
+
+    <View
+            android:id="@+id/viewAuthHeaderBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_auth_header"
+            app:layout_constraintBottom_toTopOf="@id/viewAuthHeaderGuideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+            android:id="@+id/viewAuthHeaderIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/ic_app"
+            app:layout_constraintTop_toTopOf="@id/viewAuthHeaderBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/viewAuthHeaderBackground"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAuthHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/auth_header_title"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:fontFamily="@font/bold"
+            app:layout_constraintStart_toEndOf="@id/viewAuthHeaderIcon"
+            app:layout_constraintTop_toBottomOf="@id/viewAuthHeaderIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/viewAuthHeaderGuideline"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintVertical_bias="0.65"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewAuthBodyGuideline"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75"/>
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewAuthFooterGuideline"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
