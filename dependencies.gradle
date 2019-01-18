@@ -29,7 +29,7 @@ ext {
     retrofitVersion = '2.4.0'
     //Kotlin
     kotlinVersion = '1.3.10'
-    kotlinCoroutinesVersion = '1.0.0'
+    kotlinCoroutinesVersion = '1.1.0'
     //Glide
     glideVersion = '4.8.0'
     glideKapt = '4.8.0'
@@ -40,6 +40,13 @@ ext {
     conductorVersion = '3.0.0-rc1'
     //ktx
     ktxVersion = '1.0.1'
+
+
+
+
+    jUnitVersion = '4.12'
+    testRunnerVersion = '1.0.2'
+    espressoCoreVersion = '3.0.2'
 
     // Library dependencies
     libraryDependencies =
@@ -78,4 +85,10 @@ ext {
              conductor               : "com.bluelinelabs:conductor:${conductorVersion}",
              conductorSupport        : "com.bluelinelabs:conductor-support:${conductorVersion}",
              ktx                     : "androidx.core:core-ktx:${ktxVersion}"]
+
+    testingDependencies = [
+            jUnit       : "junit:junit:${jUnitVersion}",
+            testRunner  : "com.android.support.test:runner:${testRunnerVersion}",
+            espressoCore: "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}"
+    ]
 }
