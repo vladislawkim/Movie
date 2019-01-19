@@ -2,10 +2,10 @@ package com.vladislawfox.auth.domain.interactor
 
 import com.vladislawfox.auth.domain.model.Session
 import com.vladislawfox.auth.domain.repository.AuthRepository
-import com.vladislawfox.base.exception.Failure
-import com.vladislawfox.base.functional.Either
-import com.vladislawfox.base.functional.flatMap
-import com.vladislawfox.base.interactor.UseCase
+import com.vladislawfox.base.domain.exception.Failure
+import com.vladislawfox.base.domain.functional.Either
+import com.vladislawfox.base.domain.functional.flatMap
+import com.vladislawfox.base.domain.interactor.UseCase
 import javax.inject.Inject
 
 /**

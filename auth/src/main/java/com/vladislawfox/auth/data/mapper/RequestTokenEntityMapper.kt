@@ -2,7 +2,7 @@ package com.vladislawfox.auth.data.mapper
 
 import com.vladislawfox.auth.data.model.RequestTokenEntity
 import com.vladislawfox.auth.domain.model.RequestToken
-import com.vladislawfox.base.mapper.Mapper
+import com.vladislawfox.base.domain.mapper.Mapper
 import javax.inject.Inject
 
 /**

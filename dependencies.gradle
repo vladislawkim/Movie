@@ -81,7 +81,7 @@ ext {
              okhttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
              okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
              epoxy                   : "com.airbnb.android:epoxy:${epoxyVersion}",
-             epoxyProcessor          : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
+             epoxyKapt               : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
              conductor               : "com.bluelinelabs:conductor:${conductorVersion}",
              conductorSupport        : "com.bluelinelabs:conductor-support:${conductorVersion}",
              ktx                     : "androidx.core:core-ktx:${ktxVersion}"]

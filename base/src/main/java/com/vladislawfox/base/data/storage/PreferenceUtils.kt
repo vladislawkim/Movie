@@ -1,4 +1,4 @@
-package com.vladislawfox.base.utils
+package com.vladislawfox.base.data.storage
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE

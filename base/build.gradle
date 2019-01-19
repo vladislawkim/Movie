@@ -41,7 +41,13 @@ dependencies {
     api libraryDependencies.gson
     api libraryDependencies.retrofit
     api libraryDependencies.constraintLayout
+    api libraryDependencies.conductor
+    api libraryDependencies.ktx
     api libraryDependencies.dagger
+    api libraryDependencies.epoxy
+    api libraryDependencies.glide
+    kapt libraryDependencies.glideKapt
+    kapt libraryDependencies.epoxyKapt
     kapt libraryDependencies.daggerCompiler
 
     testImplementation testingDependencies.jUnit

@@ -1,4 +1,4 @@
-package com.vladislawfox.base.exception
+package com.vladislawfox.base.domain.exception
 
 /**
  * Created by vladislawfox on 1/18/19.

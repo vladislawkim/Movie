@@ -1,7 +1,7 @@
-package com.vladislawfox.base.interactor
+package com.vladislawfox.base.domain.interactor
 
-import com.vladislawfox.base.exception.Failure
-import com.vladislawfox.base.functional.Either
+import com.vladislawfox.base.domain.exception.Failure
+import com.vladislawfox.base.domain.functional.Either
 import kotlinx.coroutines.*
 
 abstract class UseCase<out Type, in Params> where Type : Any {

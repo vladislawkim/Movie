@@ -1,4 +1,4 @@
-package com.vladislawfox.base.mapper
+package com.vladislawfox.base.domain.mapper
 
 import java.util.ArrayList
 

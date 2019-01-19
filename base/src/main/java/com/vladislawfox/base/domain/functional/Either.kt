@@ -1,4 +1,4 @@
-package com.vladislawfox.base.functional
+package com.vladislawfox.base.domain.functional
 
 /**
  * Represents a value of one of two possible types (a disjoint union).

@@ -3,8 +3,8 @@ package com.vladislawfox.auth.domain.repository
 import com.vladislawfox.auth.domain.model.GuestSession
 import com.vladislawfox.auth.domain.model.RequestToken
 import com.vladislawfox.auth.domain.model.Session
-import com.vladislawfox.base.exception.Failure
-import com.vladislawfox.base.functional.Either
+import com.vladislawfox.base.domain.exception.Failure
+import com.vladislawfox.base.domain.functional.Either
 
 interface AuthRepository {
     fun getRequestToken(): Either<Failure, RequestToken>

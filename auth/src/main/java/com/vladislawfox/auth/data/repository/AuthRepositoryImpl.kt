@@ -13,11 +13,12 @@ import com.vladislawfox.auth.domain.model.GuestSession
 import com.vladislawfox.auth.domain.model.RequestToken
 import com.vladislawfox.auth.domain.model.Session
 import com.vladislawfox.auth.domain.repository.AuthRepository
-import com.vladislawfox.base.exception.Failure
-import com.vladislawfox.base.exception.NetworkStatusCode
-import com.vladislawfox.base.functional.Either
-import com.vladislawfox.base.functional.map
-import com.vladislawfox.base.utils.PreferenceUtils
+import com.vladislawfox.base.domain.exception.Failure
+import com.vladislawfox.base.domain.exception.NetworkStatusCode
+import com.vladislawfox.base.domain.functional.Either
+import com.vladislawfox.base.domain.functional.map
+import com.vladislawfox.base.data.storage.PreferenceUtils
+import com.vladislawfox.base.presentation.platform.NetworkHandler
 import retrofit2.Call
 import javax.inject.Inject
 
@@ -29,7 +30,8 @@ class AuthRepositoryImpl @Inject constructor(
     private val requestTokenEntityMapper: RequestTokenEntityMapper,
     private val sessionEntityMapper: SessionEntityMapper,
     private val authService: AuthService,
-    private val preferenceUtils: PreferenceUtils
+    private val preferenceUtils: PreferenceUtils,
+    private val networkHandler: NetworkHandler
 ) : AuthRepository {
 
     override fun getRequestToken(): Either<Failure, RequestToken> =
@@ -58,6 +60,7 @@ class AuthRepositoryImpl @Inject constructor(
     }
 
     private fun <R> request(call: Call<R>, default: R): Either<Failure, R> {
+        if(networkHandler.isConnected == false) return Either.Left(Failure.NetworkConnection)
         return try {
             val response = call.execute()
             when (response.isSuccessful) {

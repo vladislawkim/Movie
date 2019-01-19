@@ -1,4 +1,4 @@
-package com.vladislawfox.base.utils
+package com.vladislawfox.base.presentation.utils
 
 import android.util.Log
 import com.vladislawfox.base.BuildConfig

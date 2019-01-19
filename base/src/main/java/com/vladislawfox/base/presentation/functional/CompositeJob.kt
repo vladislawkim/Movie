@@ -1,4 +1,4 @@
-package com.vladislawfox.base.functional
+package com.vladislawfox.base.presentation.functional
 
 import kotlinx.coroutines.Job
 

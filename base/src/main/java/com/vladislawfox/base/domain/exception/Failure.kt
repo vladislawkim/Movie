@@ -1,4 +1,4 @@
-package com.vladislawfox.base.exception
+package com.vladislawfox.base.domain.exception
 
 sealed class Failure {
     object NetworkConnection : Failure()

@@ -2,7 +2,7 @@ package com.vladislawfox.auth.data.mapper
 
 import com.vladislawfox.auth.data.model.SessionEntity
 import com.vladislawfox.auth.domain.model.Session
-import com.vladislawfox.base.mapper.Mapper
+import com.vladislawfox.base.domain.mapper.Mapper
 import javax.inject.Inject
 
 /**
