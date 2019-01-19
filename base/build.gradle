@@ -32,7 +32,7 @@ android {
 
 dependencies {
     feature project(":auth")
-    application project(":app")
+    application project(':installed')
 
     api libraryDependencies.kotlinStdlibJdk8
     api libraryDependencies.kotlinCoroutines
