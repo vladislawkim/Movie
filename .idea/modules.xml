@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Movie.iml" filepath="$PROJECT_DIR$/Movie.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth/auth.iml" filepath="$PROJECT_DIR$/auth/auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/installed/installed.iml" filepath="$PROJECT_DIR$/installed/installed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instant/instant.iml" filepath="$PROJECT_DIR$/instant/instant.iml" />
     </modules>
   </component>
 </project>

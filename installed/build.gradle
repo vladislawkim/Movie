@@ -14,6 +14,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -22,14 +26,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api libraryDependencies.kotlinStdlibJdk8
-    api libraryDependencies.kotlinCoroutines
-    api libraryDependencies.kotlinCoroutinesAndroid
-    api libraryDependencies.appcompatV7
-    api libraryDependencies.constraintLayout
-
-    testImplementation testingDependencies.jUnit
-    androidTestImplementation testingDependencies.testRunner
-    androidTestImplementation testingDependencies.espressoCore
+    implementation project(":base")
+    implementation project(":auth")
 }
+
