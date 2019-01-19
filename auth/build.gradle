@@ -1,12 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.feature'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 21
@@ -19,32 +17,21 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+        }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation project(":base")
-
-    api libraryDependencies.kotlinStdlibJdk8
-    api libraryDependencies.kotlinCoroutines
-    api libraryDependencies.kotlinCoroutinesAndroid
-    api libraryDependencies.appcompatV7
-    api libraryDependencies.gson
-    api libraryDependencies.dagger
-    api libraryDependencies.retrofit
-    kapt libraryDependencies.daggerCompiler
-
-    testImplementation testingDependencies.jUnit
-    androidTestImplementation testingDependencies.testRunner
-    androidTestImplementation testingDependencies.espressoCore
 }
-repositories {
-  mavenCentral()
-}
+
