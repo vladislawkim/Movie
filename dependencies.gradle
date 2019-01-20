@@ -22,7 +22,7 @@ ext {
     okHttpVersion = '3.11.0'
     overScrollList = '1.0.4'
     //Dagger
-    daggerVersion = '2.13'
+    daggerVersion = '2.16'
     //Epoxy
     epoxyVersion = '3.0.0-rc1'
     //Retrofit
