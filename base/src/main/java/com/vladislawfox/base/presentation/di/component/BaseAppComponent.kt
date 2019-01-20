@@ -1,5 +1,6 @@
 package com.vladislawfox.base.presentation.di.component
 
+import com.vladislawfox.base.MovieApp
 import com.vladislawfox.base.presentation.di.BaseComponent
 import com.vladislawfox.base.presentation.di.api.BaseAppComponentApi
 import com.vladislawfox.base.presentation.di.module.ContextModule
@@ -12,6 +13,9 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [ContextModule::class])
 interface BaseAppComponent : BaseComponent, BaseAppComponentApi {
+
+    fun inject(app: MovieApp)
+
     companion object {
         @Volatile
         private lateinit var baseAppComponent: BaseAppComponent
