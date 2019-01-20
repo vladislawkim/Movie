@@ -17,7 +17,8 @@ import javax.inject.Inject
 /**
  * Created by vladislawfox on 1/19/19.
  */
-abstract class BaseViewController<V : MvpView, P : Presenter<V>, C : BaseComponent>(bundle: Bundle? = null) : Controller(bundle), HasComponent<C>, MvpView {
+abstract class BaseViewController<V : MvpView, P : Presenter<V>, C : BaseComponent>(bundle: Bundle? = null) : Controller(bundle),
+    HasComponent<C>, MvpView {
 
     @Inject
     protected lateinit var presenter: P

@@ -1,14 +1,15 @@
-package com.vladislawfox.base
+package com.vladislawfox.coreimpl
 
 import android.app.Application
 import com.vladislawfox.base.presentation.di.HasComponent
-import com.vladislawfox.base.presentation.di.component.BaseAppComponent
-import com.vladislawfox.base.presentation.di.module.ContextModule
+import com.vladislawfox.coreimpl.component.BaseAppComponent
+import com.vladislawfox.coreimpl.module.ContextModule
 
 /**
  * Created by vladislawfox on 1/20/19.
  */
-class MovieApp : Application(), HasComponent<BaseAppComponent> {
+class MovieApp : Application(),
+    com.vladislawfox.base.presentation.di.HasComponent<BaseAppComponent> {
 
     private lateinit var appComponent: BaseAppComponent
 

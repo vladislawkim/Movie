@@ -1,9 +1,9 @@
-package com.vladislawfox.base.presentation.di.component
+package com.vladislawfox.coreimpl.component
 
-import com.vladislawfox.base.MovieApp
 import com.vladislawfox.base.presentation.di.BaseComponent
-import com.vladislawfox.base.presentation.di.api.BaseAppComponentApi
-import com.vladislawfox.base.presentation.di.module.ContextModule
+import com.vladislawfox.coreapi.api.BaseAppComponentApi
+import com.vladislawfox.coreimpl.MovieApp
+import com.vladislawfox.coreimpl.module.ContextModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -24,7 +24,7 @@ interface BaseAppComponent : BaseComponent, BaseAppComponentApi {
             if (this::baseAppComponent.isInitialized) {
                 throw IllegalArgumentException("BaseAppComponent is already initialized.")
             }
-            this.baseAppComponent = baseAppComponent
+            Companion.baseAppComponent = baseAppComponent
         }
 
         fun get(): BaseAppComponent {

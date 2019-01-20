@@ -1,4 +1,4 @@
-package com.vladislawfox.base.presentation.di.api
+package com.vladislawfox.coreapi.api
 
 import android.content.Context
 import com.vladislawfox.base.data.storage.PreferenceUtils
