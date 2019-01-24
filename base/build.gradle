@@ -4,60 +4,62 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 kapt {
-    correctErrorTypes = true
-    mapDiagnosticLocations = true
+  correctErrorTypes = true
+  mapDiagnosticLocations = true
 }
 
 android {
-    compileSdkVersion 28
-    defaultConfig {
-        baseFeature true
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
+  compileSdkVersion 28
+  defaultConfig {
+    baseFeature true
+    minSdkVersion 21
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
 
-    buildTypes {
-        debug {
-            minifyEnabled false
-            useProguard false
-        }
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+  buildTypes {
+    debug {
+      minifyEnabled false
+      useProguard false
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
-    feature project(":auth")
-    application project(':installed')
+  feature project(":auth")
+  api 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
+  application project(':installed')
 
-    api libraryDependencies.kotlinStdlibJdk8
-    api libraryDependencies.kotlinCoroutines
-    api libraryDependencies.kotlinCoroutinesAndroid
-    api libraryDependencies.appcompatV7
-    api libraryDependencies.gson
-    api libraryDependencies.retrofit
-    api libraryDependencies.retrofitGsonConverter
-    api libraryDependencies.constraintLayout
-    api libraryDependencies.conductor
-    api libraryDependencies.ktx
-    api libraryDependencies.glide
-    kapt libraryDependencies.glideKapt
-    api libraryDependencies.epoxy
-    kapt libraryDependencies.epoxyKapt
-    api libraryDependencies.dagger
-//    kapt libraryDependencies.daggerCompiler
+  api libraryDependencies.kotlinStdlibJdk8
+  api libraryDependencies.kotlinCoroutines
+  api libraryDependencies.kotlinCoroutinesAndroid
+  api libraryDependencies.appcompatV7
+  api libraryDependencies.gson
+  api libraryDependencies.retrofit
+  api libraryDependencies.retrofitGsonConverter
+  api libraryDependencies.constraintLayout
+  //    api libraryDependencies.conductor
+  api libraryDependencies.ktx
+  api libraryDependencies.navigation
+  api libraryDependencies.navigationFragment
+  api libraryDependencies.glide
+  kapt libraryDependencies.glideKapt
+  api libraryDependencies.epoxy
+  kapt libraryDependencies.epoxyKapt
+  api libraryDependencies.dagger
+  //    kapt libraryDependencies.daggerCompiler
 
-    testImplementation testingDependencies.jUnit
-    androidTestImplementation testingDependencies.testRunner
-    androidTestImplementation testingDependencies.espressoCore
+  testImplementation testingDependencies.jUnit
+  androidTestImplementation testingDependencies.testRunner
+  androidTestImplementation testingDependencies.espressoCore
 }
-

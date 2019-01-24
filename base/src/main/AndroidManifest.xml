@@ -2,7 +2,7 @@
 		package="com.vladislawfox.base" >
 
 	<application
-			android:name="com.vladislawfox.coreimpl.MovieApp"
+			android:name="com.vladislawfox.base.MovieApp"
 			android:allowBackup="false"
 			android:icon="@mipmap/ic_launcher"
 			android:label="@string/app_name"

@@ -2,7 +2,7 @@ package com.vladislawfox.coreimpl.component
 
 import com.vladislawfox.base.presentation.di.BaseComponent
 import com.vladislawfox.coreapi.api.BaseAppComponentApi
-import com.vladislawfox.coreimpl.MovieApp
+import com.vladislawfox.base.MovieApp
 import com.vladislawfox.coreimpl.module.ContextModule
 import dagger.Component
 import javax.inject.Singleton
