@@ -39,22 +39,24 @@ dependencies {
     feature project(":auth")
     application project(':installed')
 
-    api libraryDependencies.kotlinStdlibJdk8
-    api libraryDependencies.kotlinCoroutines
-    api libraryDependencies.kotlinCoroutinesAndroid
     api libraryDependencies.appcompatV7
-    api libraryDependencies.gson
-    api libraryDependencies.retrofit
-    api libraryDependencies.retrofitGsonConverter
     api libraryDependencies.constraintLayout
-    api libraryDependencies.conductor
-    api libraryDependencies.ktx
-    api libraryDependencies.glide
+
+    implementation libraryDependencies.kotlinStdlibJdk8
+    implementation libraryDependencies.kotlinCoroutines
+    implementation libraryDependencies.kotlinCoroutinesAndroid
+
+    implementation libraryDependencies.gson
+    implementation libraryDependencies.retrofit
+    implementation libraryDependencies.retrofitGsonConverter
+
+    implementation libraryDependencies.ktx
+    implementation libraryDependencies.glide
     kapt libraryDependencies.glideKapt
-    api libraryDependencies.epoxy
+    implementation libraryDependencies.epoxy
     kapt libraryDependencies.epoxyKapt
-    api libraryDependencies.dagger
-//    kapt libraryDependencies.daggerCompiler
+    implementation libraryDependencies.dagger
+    kapt libraryDependencies.daggerCompiler
 
     testImplementation testingDependencies.jUnit
     androidTestImplementation testingDependencies.testRunner

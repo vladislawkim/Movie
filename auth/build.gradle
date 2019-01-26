@@ -3,6 +3,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+kapt {
+    correctErrorTypes = true
+    mapDiagnosticLocations = true
+}
+
 android {
     compileSdkVersion 28
 
@@ -32,9 +37,19 @@ android {
 }
 
 dependencies {
-    implementation project(":core-api")
     implementation project(":base")
-//    api libraryDependencies.dagger
+
+    implementation libraryDependencies.kotlinStdlibJdk8
+    implementation libraryDependencies.kotlinCoroutines
+    implementation libraryDependencies.kotlinCoroutinesAndroid
+
+    implementation libraryDependencies.gson
+    implementation libraryDependencies.retrofit
+    implementation libraryDependencies.retrofitGsonConverter
+
+    implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
+
+
 }
 

@@ -1,9 +1,9 @@
-package com.vladislawfox.coreimpl.component
+package com.vladislawfox.base.presentation.di.component
 
+import com.vladislawfox.base.MovieApp
 import com.vladislawfox.base.presentation.di.BaseComponent
-import com.vladislawfox.coreapi.api.BaseAppComponentApi
-import com.vladislawfox.coreimpl.MovieApp
-import com.vladislawfox.coreimpl.module.ContextModule
+import com.vladislawfox.base.presentation.di.module.BaseAppModule
+import com.vladislawfox.base.presentation.di.module.ContextModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -11,7 +11,7 @@ import javax.inject.Singleton
  * Created by vladislawfox on 1/19/19.
  */
 @Singleton
-@Component(modules = [ContextModule::class])
+@Component(modules = [ContextModule::class, BaseAppModule::class])
 interface BaseAppComponent : BaseComponent, BaseAppComponentApi {
 
     fun inject(app: MovieApp)

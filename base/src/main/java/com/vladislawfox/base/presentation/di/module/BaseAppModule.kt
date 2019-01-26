@@ -1,4 +1,4 @@
-package com.vladislawfox.coreimpl.module
+package com.vladislawfox.base.presentation.di.module
 
 import com.google.gson.Gson
 import dagger.Module

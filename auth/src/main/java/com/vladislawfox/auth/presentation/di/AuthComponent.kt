@@ -1,7 +1,7 @@
 package com.vladislawfox.auth.presentation.di
 
 import com.vladislawfox.base.presentation.di.scope.PerFeature
-import com.vladislawfox.coreapi.api.BaseAppComponentApi
+import com.vladislawfox.base.presentation.di.component.BaseAppComponentApi
 import dagger.Component
 import java.lang.ref.WeakReference
 

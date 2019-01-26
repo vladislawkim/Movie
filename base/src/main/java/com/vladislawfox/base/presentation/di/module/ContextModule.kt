@@ -1,4 +1,4 @@
-package com.vladislawfox.coreimpl.module
+package com.vladislawfox.base.presentation.di.module
 
 import android.content.Context
 import dagger.Module
