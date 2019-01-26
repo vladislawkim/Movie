@@ -23,7 +23,7 @@ abstract class BaseAppModule {
         @Provides
         fun provideRetrofit(httpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): Retrofit {
             val retrofitBuilder = Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://api.themoviedb.org/3/")
                 .addConverterFactory(gsonConverterFactory)
                 .client(httpClient)
             return retrofitBuilder.build()

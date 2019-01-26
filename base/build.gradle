@@ -58,8 +58,7 @@ dependencies {
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
 
-    testImplementation testingDependencies.jUnit
-    androidTestImplementation testingDependencies.testRunner
-    androidTestImplementation testingDependencies.espressoCore
+  testImplementation testingDependencies.jUnit
+  androidTestImplementation testingDependencies.testRunner
+  androidTestImplementation testingDependencies.espressoCore
 }
-

@@ -1,5 +1,8 @@
 package com.vladislawfox.auth.presentation.di
 
+import com.vladislawfox.auth.presentation.ui.LoginFragment
+import com.vladislawfox.auth.presentation.ui.LoginViewModel
+import com.vladislawfox.base.presentation.di.BaseComponent
 import com.vladislawfox.base.presentation.di.scope.PerFeature
 import com.vladislawfox.base.presentation.di.component.BaseAppComponentApi
 import dagger.Component
@@ -10,7 +13,9 @@ import java.lang.ref.WeakReference
  */
 @PerFeature
 @Component(dependencies = [AuthDependencies::class], modules = [AuthDataModule::class])
-interface AuthComponent : AuthComponentApi {
+interface AuthComponent : AuthComponentApi, BaseComponent {
+
+    fun inject(fragment: LoginFragment)
 
     companion object {
         @Volatile

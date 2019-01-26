@@ -36,13 +36,13 @@ ext {
     glideOkhttpVersion = '4.8.0'
     //Gson
     gsonVersion = '2.8.2'
-    //Conductor
-    conductorVersion = '3.0.0-rc1'
     //ktx
     ktxVersion = '1.0.1'
 
     instantApps = '1.1.0'
 
+    //navigation
+    navigationVersion = '1.0.0-alpha11'
 
 
 
@@ -84,10 +84,10 @@ ext {
              okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
              epoxy                   : "com.airbnb.android:epoxy:${epoxyVersion}",
              epoxyKapt               : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
-             conductor               : "com.bluelinelabs:conductor:${conductorVersion}",
-             conductorSupport        : "com.bluelinelabs:conductor-support:${conductorVersion}",
              ktx                     : "androidx.core:core-ktx:${ktxVersion}",
-             instantApps             : "com.google.android.instantapps:instantapps:${instantApps}"]
+             instantApps             : "com.google.android.instantapps:instantapps:${instantApps}",
+             navigation              : "android.arch.navigation:navigation-ui:${navigationVersion}",
+             navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}"]
 
     testingDependencies = [
             jUnit       : "junit:junit:${jUnitVersion}",
