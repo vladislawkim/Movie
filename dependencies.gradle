@@ -24,11 +24,11 @@ ext {
     //Dagger
     daggerVersion = '2.16'
     //Epoxy
-    epoxyVersion = '3.0.0-rc1'
+    epoxyVersion = '3.2.0'
     //Retrofit
     retrofitVersion = '2.4.0'
     //Kotlin
-    kotlinVersion = '1.3.10'
+    kotlinVersion = '1.3.20'
     kotlinCoroutinesVersion = '1.1.0'
     //Glide
     glideVersion = '4.8.0'
@@ -38,6 +38,9 @@ ext {
     gsonVersion = '2.8.2'
     //ktx
     ktxVersion = '1.0.1'
+
+    instantApps = '1.1.0'
+
     //navigation
     navigationVersion = '1.0.0-alpha11'
 
@@ -81,9 +84,10 @@ ext {
              okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
              epoxy                   : "com.airbnb.android:epoxy:${epoxyVersion}",
              epoxyKapt               : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
+             ktx                     : "androidx.core:core-ktx:${ktxVersion}",
+             instantApps             : "com.google.android.instantapps:instantapps:${instantApps}",
              navigation              : "android.arch.navigation:navigation-ui:${navigationVersion}",
-             navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}",
-             ktx                     : "androidx.core:core-ktx:${ktxVersion}"]
+             navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}"]
 
     testingDependencies = [
             jUnit       : "junit:junit:${jUnitVersion}",

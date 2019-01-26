@@ -4,13 +4,10 @@ import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.actor
 import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.withContext
 
 class AndroidJob(lifecycle: Lifecycle) : Job by Job(), LifecycleObserver {
     init {
@@ -21,6 +18,8 @@ class AndroidJob(lifecycle: Lifecycle) : Job by Job(), LifecycleObserver {
     fun destroy() = cancel()
 }
 
+@UseExperimental(ObsoleteCoroutinesApi::class)
+@ObsoleteCoroutinesApi
 fun View.setOnClick(scope: CoroutineScope, action: suspend () -> Unit) {
     // launch one actor as a parent of the context job
     val eventActor = scope.actor<Unit> {
@@ -30,6 +29,8 @@ fun View.setOnClick(scope: CoroutineScope, action: suspend () -> Unit) {
     setOnClickListener { eventActor.offer(Unit) }
 }
 
+@UseExperimental(ObsoleteCoroutinesApi::class)
+@ObsoleteCoroutinesApi
 suspend fun <T> ReceiveChannel<T>.consumeEachOnUI(action: (T) -> Unit) = onUI {
     consumeEach(action)
 }

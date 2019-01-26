@@ -6,5 +6,5 @@ import com.bumptech.glide.module.AppGlideModule
 /**
  * Created by vladislawfox on 1/19/19.
  */
-@GlideModule
-class GlideModule : AppGlideModule()
+//@GlideModule
+//class GlideModule : AppGlideModule()
