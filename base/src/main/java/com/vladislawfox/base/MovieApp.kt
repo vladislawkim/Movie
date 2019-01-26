@@ -2,6 +2,7 @@ package com.vladislawfox.base
 
 import android.app.Application
 import com.vladislawfox.base.presentation.di.component.BaseAppComponent
+import com.vladislawfox.base.presentation.di.component.DaggerBaseAppComponent
 import com.vladislawfox.base.presentation.di.module.ContextModule
 
 /**
@@ -18,10 +19,10 @@ class MovieApp : Application(),
     }
 
     override fun initializeInjector() {
-//        this.appComponent = DaggerBaseAppComponent
-//            .builder()
-//            .contextModule(ContextModule(this))
-//            .build()
+        this.appComponent = DaggerBaseAppComponent
+            .builder()
+            .contextModule(ContextModule(this))
+            .build()
         BaseAppComponent.init(appComponent)
     }
 

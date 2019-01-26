@@ -10,8 +10,9 @@ import kotlinx.coroutines.channels.ProducerScope
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.produce
 import java.lang.IllegalArgumentException
+import javax.inject.Inject
 
-class GetGuestSessionInteractor(private val authRepository: AuthRepository) : MviInteractor<LoginAction, LoginResult> {
+class GetGuestSessionInteractor @Inject constructor(private val authRepository: AuthRepository) : MviInteractor<LoginAction, LoginResult> {
 
     @ExperimentalCoroutinesApi
     override fun CoroutineScope.processAction(action: LoginAction): ReceiveChannel<LoginResult> = produce {

@@ -7,21 +7,24 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import com.vladislawfox.base.presentation.di.BaseComponent
+import com.vladislawfox.base.presentation.di.HasComponent
 import com.vladislawfox.base.presentation.extension.AndroidJob
+import com.vladislawfox.base.presentation.mvi.MviIntent
+import com.vladislawfox.base.presentation.mvi.MviView
+import com.vladislawfox.base.presentation.mvi.MviViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlin.coroutines.CoroutineContext
-import com.vladislawfox.base.presentation.mvi.MviIntent
-import com.vladislawfox.base.presentation.mvi.MviView
-import com.vladislawfox.base.presentation.mvi.MviViewState
 
-abstract class BaseFragment<I : MviIntent, S : MviViewState>(@LayoutRes val layoutRes: Int) : Fragment(), CoroutineScope, MviView<I, S> {
+abstract class BaseFragment<I : MviIntent, S : MviViewState, C : BaseComponent>(@LayoutRes val layoutRes: Int) :
+    Fragment(), CoroutineScope, MviView<I, S>, HasComponent<C> {
+
+    protected lateinit var viewComponent: C
     protected val job = AndroidJob(lifecycle)
-
     override val intents = Channel<I>()
-
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
@@ -39,6 +42,13 @@ abstract class BaseFragment<I : MviIntent, S : MviViewState>(@LayoutRes val layo
         initViews()
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(layoutRes, container, false)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startStream()
@@ -49,4 +59,6 @@ abstract class BaseFragment<I : MviIntent, S : MviViewState>(@LayoutRes val layo
         activity?.let {
             Toast.makeText(it, message, Toast.LENGTH_SHORT).show()
         }
+
+    override fun getComponent(): C = viewComponent
 }

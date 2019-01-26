@@ -1,40 +1,41 @@
 package com.vladislawfox.auth.presentation.ui
 
 import com.vladislawfox.auth.domain.interactor.GetGuestSessionInteractor
-import com.vladislawfox.auth.domain.interactor.GetGuestSessionUseCase
 import com.vladislawfox.base.presentation.ui.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.channels.*
+import kotlinx.coroutines.coroutineScope
+import javax.inject.Inject
 
-class LoginViewModel(private val getGuestSessionInteractor: GetGuestSessionInteractor) : BaseViewModel<LoginIntent, LoginAction, LoginResult, LoginViewState>() {
+class LoginViewModel @Inject constructor(private val getGuestSessionInteractor: GetGuestSessionInteractor) :
+    BaseViewModel<LoginIntent, LoginAction, LoginResult, LoginViewState>() {
 
-    override val reduce = {
-            previousState: LoginViewState, result: LoginResult ->
-            when(result) {
-                is LoginResult.CreateGuestSessionIdResult.Success -> {
-                    previousState.copy(isLoading = true)
-                }
-                is LoginResult.CreateGuestSessionIdResult.Failure -> {
-                    previousState.copy(isLoading = true)
-                }
-                is LoginResult.CreateGuestSessionIdResult.InProgress -> {
-                    previousState.copy(isLoading = false)
-                }
-                is LoginResult.CreateSessionIdResult.Success -> {
-                    previousState.copy(isLoading = true)
-                }
-                is LoginResult.CreateSessionIdResult.Failure -> {
-                    previousState.copy(isLoading = true)
-                }
-                is LoginResult.CreateSessionIdResult.InProgress -> {
-                    previousState.copy(isLoading = true)
-                }
+    override val reduce = { previousState: LoginViewState, result: LoginResult ->
+        when (result) {
+            is LoginResult.CreateGuestSessionIdResult.Success -> {
+                previousState.copy(isLoading = true)
             }
+            is LoginResult.CreateGuestSessionIdResult.Failure -> {
+                previousState.copy(isLoading = true)
+            }
+            is LoginResult.CreateGuestSessionIdResult.InProgress -> {
+                previousState.copy(isLoading = false)
+            }
+            is LoginResult.CreateSessionIdResult.Success -> {
+                previousState.copy(isLoading = true)
+            }
+            is LoginResult.CreateSessionIdResult.Failure -> {
+                previousState.copy(isLoading = true)
+            }
+            is LoginResult.CreateSessionIdResult.InProgress -> {
+                previousState.copy(isLoading = true)
+            }
+        }
     }
 
-    override fun actionFromIntent(intent: LoginIntent): LoginAction = when(intent) {
+    override fun actionFromIntent(intent: LoginIntent): LoginAction = when (intent) {
         is LoginIntent.GuestSessionIntent -> LoginAction.CreateGuestSessionIdAction
         else -> throw IllegalArgumentException("")
     }
@@ -44,10 +45,13 @@ class LoginViewModel(private val getGuestSessionInteractor: GetGuestSessionInter
 
     @ObsoleteCoroutinesApi
     @ExperimentalCoroutinesApi
-    override suspend fun CoroutineScope.processIntents(channel: Channel<LoginIntent>) = state.run {
-        channel
-            .map { intent -> actionFromIntent(intent) }
-            .flatMap { action -> getGuestSessionInteractor.run { processAction(action)} }
-            .consumeEach { result -> offer(reduce(value, result)) }
-    }
+    override suspend fun CoroutineScope.processIntents(channel: Channel<LoginIntent>) =
+        coroutineScope {
+            state.run {
+                channel
+                    .map { intent -> actionFromIntent(intent) }
+                    .flatMap { action -> getGuestSessionInteractor.run { processAction(action) } }
+                    .consumeEach { result -> offer(reduce(value, result)) }
+            }
+        }
 }

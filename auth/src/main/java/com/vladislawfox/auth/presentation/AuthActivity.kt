@@ -6,8 +6,6 @@ import androidx.navigation.Navigation
 import com.vladislawfox.auth.R
 import androidx.navigation.NavController
 
-
-
 class AuthActivity : AppCompatActivity() {
 
     var navController: NavController? = null
