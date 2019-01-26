@@ -18,6 +18,7 @@ import com.vladislawfox.base.domain.exception.NetworkStatusCode
 import com.vladislawfox.base.domain.functional.Either
 import com.vladislawfox.base.domain.functional.map
 import com.vladislawfox.base.data.storage.PreferenceUtils
+import com.vladislawfox.base.presentation.di.scope.PerFeature
 import com.vladislawfox.base.presentation.platform.NetworkHandler
 import retrofit2.Call
 import javax.inject.Inject
@@ -25,6 +26,7 @@ import javax.inject.Inject
 /**
  * Created by vladislawfox on 1/18/19.
  */
+@PerFeature
 class AuthRepositoryImpl @Inject constructor(
     private val guestSessionEntityMapper: GuestSessionEntityMapper,
     private val requestTokenEntityMapper: RequestTokenEntityMapper,

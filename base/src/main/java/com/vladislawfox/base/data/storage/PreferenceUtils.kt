@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import com.vladislawfox.base.BuildConfig
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by vladislawfox on 1/18/19.
@@ -13,6 +14,7 @@ const val PREFERENCE_NAME = BuildConfig.APPLICATION_ID + BuildConfig.FLAVOR
 
 const val SESSION_ID_KEY = "Prefs.SESSION_ID_KEY"
 
+@Singleton
 class PreferenceUtils @Inject constructor(context: Context) {
 
     private val prefs = context.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE)

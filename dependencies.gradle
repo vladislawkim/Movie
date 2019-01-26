@@ -22,13 +22,13 @@ ext {
     okHttpVersion = '3.11.0'
     overScrollList = '1.0.4'
     //Dagger
-    daggerVersion = '2.13'
+    daggerVersion = '2.16'
     //Epoxy
-    epoxyVersion = '3.0.0-rc1'
+    epoxyVersion = '3.2.0'
     //Retrofit
     retrofitVersion = '2.4.0'
     //Kotlin
-    kotlinVersion = '1.3.10'
+    kotlinVersion = '1.3.20'
     kotlinCoroutinesVersion = '1.1.0'
     //Glide
     glideVersion = '4.8.0'
@@ -40,6 +40,8 @@ ext {
     conductorVersion = '3.0.0-rc1'
     //ktx
     ktxVersion = '1.0.1'
+
+    instantApps = '1.1.0'
 
 
 
@@ -84,7 +86,8 @@ ext {
              epoxyKapt               : "com.airbnb.android:epoxy-processor:${epoxyVersion}",
              conductor               : "com.bluelinelabs:conductor:${conductorVersion}",
              conductorSupport        : "com.bluelinelabs:conductor-support:${conductorVersion}",
-             ktx                     : "androidx.core:core-ktx:${ktxVersion}"]
+             ktx                     : "androidx.core:core-ktx:${ktxVersion}",
+             instantApps             : "com.google.android.instantapps:instantapps:${instantApps}"]
 
     testingDependencies = [
             jUnit       : "junit:junit:${jUnitVersion}",
