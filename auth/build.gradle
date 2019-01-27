@@ -50,8 +50,6 @@ dependencies {
     implementation libraryDependencies.retrofit
     implementation libraryDependencies.retrofitGsonConverter
 
-    implementation libraryDependencies.navigation
-    implementation libraryDependencies.navigationFragment
 
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler

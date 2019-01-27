@@ -7,23 +7,23 @@
 
 	<fragment
 			android:id="@+id/movieFragment"
-			android:name="com.vladislawfox.movie.MovieFragment"
+			android:name="com.vladislawfox.movie.cinema.MovieFragment"
 			android:label="fragment_movie"
 			tools:layout="@layout/fragment_movie">
 	</fragment>
 	<fragment
 			android:id="@+id/serialsFragment"
-			android:name="com.vladislawfox.movie.SerialsFragment"
+			android:name="com.vladislawfox.movie.serial.SerialsFragment"
 			android:label="SerialsFragment"
 			tools:layout="@layout/fragment_serials"/>
 	<fragment
 			android:id="@+id/favoriteFragment"
-			android:name="com.vladislawfox.movie.FavoriteFragment"
+			android:name="com.vladislawfox.movie.favorite.FavoriteFragment"
 			android:label="fragment_favorite"
 			tools:layout="@layout/fragment_favorite" />
 	<fragment
 			android:id="@+id/searchFragment"
-			android:name="com.vladislawfox.movie.SearchFragment"
+			android:name="com.vladislawfox.movie.search.SearchFragment"
 			android:label="fragment_search"
 			tools:layout="@layout/fragment_search" />
 </navigation>

@@ -40,11 +40,13 @@ android {
 dependencies {
     feature project(":auth")
     feature project(":movie")
-    api 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
     application project(':installed')
 
     api libraryDependencies.appcompatV7
     api libraryDependencies.constraintLayout
+
+    api libraryDependencies.navigation
+    api libraryDependencies.navigationFragment
 
     implementation libraryDependencies.kotlinStdlibJdk8
     implementation libraryDependencies.kotlinCoroutines
