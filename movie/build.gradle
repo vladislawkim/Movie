@@ -1,6 +1,6 @@
 apply plugin: 'com.android.feature'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 kapt {
@@ -10,13 +10,15 @@ kapt {
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
-        baseFeature true
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -24,13 +26,13 @@ android {
             minifyEnabled false
             useProguard false
             buildConfigField 'String', "API_KEY", TMDB_API_KEY
-            buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3/\""
+            buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
         }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,13 +40,7 @@ android {
 }
 
 dependencies {
-    feature project(":auth")
-    feature project(":movie")
-    api 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
-    application project(':installed')
-
-    api libraryDependencies.appcompatV7
-    api libraryDependencies.constraintLayout
+    implementation project(":base")
 
     implementation libraryDependencies.kotlinStdlibJdk8
     implementation libraryDependencies.kotlinCoroutines
@@ -54,17 +50,9 @@ dependencies {
     implementation libraryDependencies.retrofit
     implementation libraryDependencies.retrofitGsonConverter
 
-    implementation libraryDependencies.ktx
-    implementation libraryDependencies.glide
-    kapt libraryDependencies.glideKapt
-    implementation libraryDependencies.epoxy
-    kapt libraryDependencies.epoxyKapt
+    implementation libraryDependencies.navigation
+    implementation libraryDependencies.navigationFragment
+
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
-
-    testImplementation testingDependencies.jUnit
-    androidTestImplementation testingDependencies.testRunner
-    androidTestImplementation testingDependencies.espressoCore
-    feature project(":movie")
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

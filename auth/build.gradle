@@ -25,11 +25,14 @@ android {
         debug {
             minifyEnabled false
             useProguard false
+            buildConfigField 'String', "API_KEY", TMDB_API_KEY
+            buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
         }
         release {
             minifyEnabled false
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -52,7 +55,5 @@ dependencies {
 
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
-
-
 }
 

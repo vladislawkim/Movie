@@ -1,4 +1,4 @@
-package com.vladislawfox.base.presentation.ui
+package com.vladislawfox.base.presentation.mvi
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,16 +10,13 @@ import androidx.fragment.app.Fragment
 import com.vladislawfox.base.presentation.di.BaseComponent
 import com.vladislawfox.base.presentation.di.HasComponent
 import com.vladislawfox.base.presentation.extension.AndroidJob
-import com.vladislawfox.base.presentation.mvi.MviIntent
-import com.vladislawfox.base.presentation.mvi.MviView
-import com.vladislawfox.base.presentation.mvi.MviViewState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseFragment<I : MviIntent, S : MviViewState, C : BaseComponent>(@LayoutRes val layoutRes: Int) :
+abstract class BaseMviFragment<I : MviIntent, S : MviViewState, C : BaseComponent>(@LayoutRes val layoutRes: Int) :
     Fragment(), CoroutineScope, MviView<I, S>, HasComponent<C> {
 
     protected lateinit var viewComponent: C

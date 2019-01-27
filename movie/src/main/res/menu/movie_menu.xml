@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+			android:id="@+id/movieFragment"
+			android:icon="@drawable/ic_movie"
+			android:title="@string/title_movie"/>
+	<item
+			android:id="@+id/serialsFragment"
+			android:icon="@drawable/ic_serial"
+			android:title="@string/title_serials"/>
+	<item
+			android:id="@+id/favoriteFragment"
+			android:icon="@drawable/ic_favorite"
+			android:title="@string/title_favorite"/>
+	<item
+			android:id="@+id/searchFragment"
+			android:icon="@drawable/ic_search"
+			android:title="@string/title_search"/>
+</menu>

@@ -1,1 +1,1 @@
-include ':installed', ':base', ':auth', ':instant'
+include ':installed', ':base', ':auth', ':instant', ':movie'

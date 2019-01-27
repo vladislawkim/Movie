@@ -1,7 +1,8 @@
 package com.vladislawfox.auth.presentation.ui
 
 import com.vladislawfox.auth.domain.interactor.GetGuestSessionInteractor
-import com.vladislawfox.base.presentation.ui.BaseViewModel
+import com.vladislawfox.auth.domain.model.GuestSession
+import com.vladislawfox.base.presentation.mvi.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.ObsoleteCoroutinesApi
@@ -15,13 +16,13 @@ class LoginViewModel @Inject constructor(private val getGuestSessionInteractor: 
     override val reduce = { previousState: LoginViewState, result: LoginResult ->
         when (result) {
             is LoginResult.CreateGuestSessionIdResult.Success -> {
-                previousState.copy(isLoading = true)
+                previousState.copy(isLoading = false, guestSession = GuestSession(result.sessionId, result.expiredTime))
             }
             is LoginResult.CreateGuestSessionIdResult.Failure -> {
-                previousState.copy(isLoading = true)
+                previousState.copy(isLoading = false)
             }
             is LoginResult.CreateGuestSessionIdResult.InProgress -> {
-                previousState.copy(isLoading = false)
+                previousState.copy(isLoading = true)
             }
             is LoginResult.CreateSessionIdResult.Success -> {
                 previousState.copy(isLoading = true)

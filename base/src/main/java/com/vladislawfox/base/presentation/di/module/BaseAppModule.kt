@@ -1,6 +1,7 @@
 package com.vladislawfox.base.presentation.di.module
 
 import com.google.gson.Gson
+import com.vladislawfox.base.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -23,7 +24,7 @@ abstract class BaseAppModule {
         @Provides
         fun provideRetrofit(httpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): Retrofit {
             val retrofitBuilder = Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/")
+                .baseUrl(BuildConfig.BASE_URL)
                 .addConverterFactory(gsonConverterFactory)
                 .client(httpClient)
             return retrofitBuilder.build()
@@ -45,7 +46,7 @@ abstract class BaseAppModule {
                 val originalHttpUrl = original.url()
 
                 val url = originalHttpUrl.newBuilder()
-                    .addQueryParameter("api_key", "")
+                    .addQueryParameter("api_key", BuildConfig.API_KEY)
                     .build()
 
                 val request = original.newBuilder().url(url).build()

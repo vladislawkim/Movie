@@ -14,10 +14,10 @@ import retrofit2.http.POST
  * Created by vladislawfox on 1/18/19.
  */
 
-const val REQUEST_TOKEN_ENDPOINT = "/authentication/token/new"
-const val GUEST_SESSION_ENDPOINT = "/authentication/guest_session/new"
-const val SESSION_ENDPOINT = "/authentication/session/new"
-const val VALIDATE_TOKEN_ENDPOINT = "/authentication/token/validate_with_login"
+const val REQUEST_TOKEN_ENDPOINT = "/3/authentication/token/new"
+const val GUEST_SESSION_ENDPOINT = "/3/authentication/guest_session/new"
+const val SESSION_ENDPOINT = "/3/authentication/session/new"
+const val VALIDATE_TOKEN_ENDPOINT = "/3/authentication/token/validate_with_login"
 
 interface AuthApi {
 

@@ -8,12 +8,14 @@ import com.vladislawfox.auth.R
 import com.vladislawfox.auth.presentation.di.AuthComponent
 import com.vladislawfox.auth.presentation.di.DaggerAuthComponent_AuthDependenciesComponent
 import com.vladislawfox.base.presentation.di.component.BaseAppComponent
-import com.vladislawfox.base.presentation.ui.BaseFragment
+import com.vladislawfox.base.presentation.mvi.BaseMviFragment
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class LoginFragment : BaseFragment<LoginIntent, LoginViewState, AuthComponent>(R.layout.fragment_login) {
+class LoginFragment : BaseMviFragment<LoginIntent, LoginViewState, AuthComponent>(R.layout.fragment_login) {
 
     @Inject lateinit var viewModel: LoginViewModel
 
@@ -25,12 +27,23 @@ class LoginFragment : BaseFragment<LoginIntent, LoginViewState, AuthComponent>(R
     override fun initViews() {
     }
 
+    @ExperimentalCoroutinesApi
     override fun setupIntents() {
+        viewAuthGuestSession.setOnClickListener {
+            launch {
+                viewModel.state.value.let {
+                    intents.send(LoginIntent.GuestSessionIntent)
+                }
+            }
+        }
     }
 
     override fun startStream(): Job = launch { viewModel.run{ processIntents(intents) } }
 
     override fun render(state: LoginViewState) {
+        state.guestSession?.let {
+            toast(it.sessionId)
+        }
     }
 
     override fun initializeInjector() {

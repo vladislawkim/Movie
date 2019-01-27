@@ -1,7 +1,6 @@
-package com.vladislawfox.base.presentation.ui
+package com.vladislawfox.base.presentation.mvi
 
 import androidx.lifecycle.ViewModel
-import com.vladislawfox.base.presentation.mvi.*
 
 
 abstract class BaseViewModel<I : MviIntent, A : MviAction, R : MviResult, S : MviViewState> : ViewModel(),

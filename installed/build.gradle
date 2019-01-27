@@ -28,5 +28,6 @@ android {
 dependencies {
     implementation project(":base")
     implementation project(":auth")
+    implementation project(":movie")
 }
 
