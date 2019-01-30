@@ -44,6 +44,9 @@ ext {
     //navigation
     navigationVersion = '1.0.0-alpha11'
 
+    //mosby-mvp
+    mosbyMvpVersion = '3.1.1'
+
 
 
     jUnitVersion = '4.12'
@@ -87,7 +90,8 @@ ext {
              ktx                     : "androidx.core:core-ktx:${ktxVersion}",
              instantApps             : "com.google.android.instantapps:instantapps:${instantApps}",
              navigation              : "android.arch.navigation:navigation-ui:${navigationVersion}",
-             navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}"]
+             navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}",
+             mvp                     : "com.hannesdorfmann.mosby3:mvp:${mosbyMvpVersion}"]
 
     testingDependencies = [
             jUnit       : "junit:junit:${jUnitVersion}",

@@ -48,6 +48,8 @@ dependencies {
     api libraryDependencies.navigation
     api libraryDependencies.navigationFragment
 
+    api libraryDependencies.mvp
+
     implementation libraryDependencies.kotlinStdlibJdk8
     implementation libraryDependencies.kotlinCoroutines
     implementation libraryDependencies.kotlinCoroutinesAndroid
@@ -67,6 +69,4 @@ dependencies {
     testImplementation testingDependencies.jUnit
     androidTestImplementation testingDependencies.testRunner
     androidTestImplementation testingDependencies.espressoCore
-    feature project(":movie")
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

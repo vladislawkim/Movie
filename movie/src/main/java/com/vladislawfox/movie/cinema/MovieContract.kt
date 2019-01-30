@@ -1,12 +1,12 @@
 package com.vladislawfox.movie.cinema
 
-import com.vladislawfox.base.presentation.mvp.MvpView
-import com.vladislawfox.base.presentation.mvp.Presenter
+import com.hannesdorfmann.mosby3.mvp.MvpPresenter
+import com.hannesdorfmann.mosby3.mvp.MvpView
 
 /**
  * Created by vladislawfox on 1/27/19.
  */
 interface MovieContract {
-  interface Presenter: com.vladislawfox.base.presentation.mvp.Presenter<View>
+  interface Presenter: MvpPresenter<View>
   interface View : MvpView
 }

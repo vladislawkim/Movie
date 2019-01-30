@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference
  */
 @PerFeature
 @Component(dependencies = [DashboardDependencies::class])
-interface DashboardComponent {
+interface DashboardComponent : DashboardComponentApi{
 
   companion object {
     @Volatile

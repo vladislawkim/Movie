@@ -6,7 +6,13 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.vladislawfox.base.presentation.di.HasComponent
+import com.vladislawfox.base.presentation.di.component.BaseAppComponent
+import com.vladislawfox.movie.dashboard.DaggerDashboardComponent_DashboardDependenciesComponent
+import com.vladislawfox.movie.dashboard.DashboardComponent
+import com.vladislawfox.movie.dashboard.activity.DaggerDashboardActivityComponent
+import com.vladislawfox.movie.dashboard.activity.DaggerDashboardActivityComponent_DashboardActivityDependenciesComponent
 import com.vladislawfox.movie.dashboard.activity.DashboardActivityComponent
+import com.vladislawfox.movie.dashboard.activity.module.ActivityContextModule
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), HasComponent<DashboardActivityComponent> {
@@ -24,7 +30,19 @@ class MainActivity : AppCompatActivity(), HasComponent<DashboardActivityComponen
     }
 
     override fun initializeInjector() {
-
+        val dashboardActivityDependencies = DaggerDashboardActivityComponent_DashboardActivityDependenciesComponent
+            .builder()
+            .dashboardComponentApi(DashboardComponent
+                .get(DaggerDashboardComponent_DashboardDependenciesComponent
+                    .builder()
+                    .baseAppComponentApi((application as HasComponent<*>).getComponent() as BaseAppComponent)
+                    .build()))
+            .build()
+        dashboardActivityComponent = DaggerDashboardActivityComponent
+            .builder()
+            .dashboardActivityDependencies(dashboardActivityDependencies)
+            .activityContextModule(ActivityContextModule(this))
+            .build()
     }
 
     override fun getComponent(): DashboardActivityComponent = dashboardActivityComponent
