@@ -62,7 +62,7 @@ dependencies {
     implementation libraryDependencies.glide
     kapt libraryDependencies.glideKapt
     implementation libraryDependencies.epoxy
-    kapt libraryDependencies.epoxyKapt
+//    kapt libraryDependencies.epoxyKapt
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
 

@@ -52,6 +52,12 @@ dependencies {
     implementation libraryDependencies.retrofit
     implementation libraryDependencies.retrofitGsonConverter
 
+    implementation libraryDependencies.overScrollList
+
     implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
+
+    implementation libraryDependencies.epoxy
+    kapt libraryDependencies.epoxyKapt
 }
+

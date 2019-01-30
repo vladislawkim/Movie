@@ -47,6 +47,8 @@ ext {
     //mosby-mvp
     mosbyMvpVersion = '3.1.1'
 
+    overScrollList = '1.0.4'
+
 
 
     jUnitVersion = '4.12'
@@ -91,7 +93,8 @@ ext {
              instantApps             : "com.google.android.instantapps:instantapps:${instantApps}",
              navigation              : "android.arch.navigation:navigation-ui:${navigationVersion}",
              navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}",
-             mvp                     : "com.hannesdorfmann.mosby3:mvp:${mosbyMvpVersion}"]
+             mvp                     : "com.hannesdorfmann.mosby3:mvp:${mosbyMvpVersion}",
+             overScrollList           : "me.everything:overscroll-decor-android:${overScrollList}"]
 
     testingDependencies = [
             jUnit       : "junit:junit:${jUnitVersion}",

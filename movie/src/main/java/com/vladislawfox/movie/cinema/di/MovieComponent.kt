@@ -2,7 +2,7 @@ package com.vladislawfox.movie.cinema.di
 
 import com.vladislawfox.base.presentation.di.BaseComponent
 import com.vladislawfox.base.presentation.di.scope.PerScreen
-import com.vladislawfox.movie.cinema.MovieFragment
+import com.vladislawfox.movie.cinema.screen.MovieFragment
 import com.vladislawfox.movie.dashboard.activity.DashboardActivityComponent
 import dagger.Component
 

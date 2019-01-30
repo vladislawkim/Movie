@@ -1,14 +1,11 @@
-package com.vladislawfox.movie.cinema
+package com.vladislawfox.movie.cinema.screen
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.vladislawfox.base.presentation.di.HasComponent
 import com.vladislawfox.base.presentation.mvp.BaseFragment
 import com.vladislawfox.movie.R
 import com.vladislawfox.movie.cinema.di.DaggerMovieComponent
 import com.vladislawfox.movie.cinema.di.MovieComponent
+import com.vladislawfox.movie.cinema.contract.MovieContract
 import com.vladislawfox.movie.dashboard.activity.DashboardActivityComponent
 
 class MovieFragment : BaseFragment<MovieContract.View, MovieContract.Presenter, MovieComponent>(

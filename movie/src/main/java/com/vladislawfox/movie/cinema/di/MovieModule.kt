@@ -1,8 +1,8 @@
 package com.vladislawfox.movie.cinema.di
 
 import com.vladislawfox.base.presentation.di.scope.PerScreen
-import com.vladislawfox.movie.cinema.MovieContract
-import com.vladislawfox.movie.cinema.MoviePresenterImpl
+import com.vladislawfox.movie.cinema.contract.MovieContract
+import com.vladislawfox.movie.cinema.presenter.MoviePresenterImpl
 import dagger.Binds
 import dagger.Module
 

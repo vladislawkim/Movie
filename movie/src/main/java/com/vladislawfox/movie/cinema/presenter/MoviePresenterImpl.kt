@@ -1,6 +1,7 @@
-package com.vladislawfox.movie.cinema
+package com.vladislawfox.movie.cinema.presenter
 
 import com.vladislawfox.base.presentation.mvp.BasePresenter
+import com.vladislawfox.movie.cinema.contract.MovieContract
 import javax.inject.Inject
 
 /**
