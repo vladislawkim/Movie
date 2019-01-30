@@ -17,6 +17,11 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:itemHorizontalTranslationEnabled="false"
+            app:labelVisibilityMode="unlabeled"
+            app:elevation="2dp"
+            app:itemIconTint="@drawable/nav_item_tint"
             app:menu="@menu/movie_menu"
          />
 </FrameLayout>
