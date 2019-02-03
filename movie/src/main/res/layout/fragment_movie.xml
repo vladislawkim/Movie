@@ -15,7 +15,6 @@
 			>
 		<include
 				layout="@layout/dashboard_toolbar"
-				app:layout_scrollFlags="scroll"
 				/>
 	</com.google.android.material.appbar.AppBarLayout>
 
@@ -24,6 +23,9 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="@color/white"
+			android:overScrollMode="never"
+			android:clipToPadding="?actionBarSize"
+			android:paddingBottom="?actionBarSize"
 			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 			app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 

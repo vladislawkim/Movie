@@ -10,9 +10,9 @@
 			android:id="@+id/viewHeaderModelTitle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textColor="@color/black"
-			android:fontFamily="@font/bold"
-			android:textSize="@dimen/text_size_48"
+			android:textColor="@color/black_alpha_70"
+			android:fontFamily="@font/medium"
+			android:textSize="@dimen/text_size_38"
 			android:includeFontPadding="false"
 			tools:text="Popular"
 			/>

@@ -27,6 +27,8 @@ android {
             buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3/\""
         }
         release {
+            buildConfigField 'String', "API_KEY", TMDB_API_KEY
+            buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -50,20 +52,20 @@ dependencies {
 
     api libraryDependencies.mvp
 
-    implementation libraryDependencies.kotlinStdlibJdk8
-    implementation libraryDependencies.kotlinCoroutines
-    implementation libraryDependencies.kotlinCoroutinesAndroid
+    api libraryDependencies.kotlinStdlibJdk8
+    api libraryDependencies.kotlinCoroutines
+    api libraryDependencies.kotlinCoroutinesAndroid
 
-    implementation libraryDependencies.gson
-    implementation libraryDependencies.retrofit
-    implementation libraryDependencies.retrofitGsonConverter
+    api libraryDependencies.gson
+    api libraryDependencies.retrofit
+    api libraryDependencies.retrofitGsonConverter
 
-    implementation libraryDependencies.ktx
-    implementation libraryDependencies.glide
+    api libraryDependencies.ktx
+    api libraryDependencies.glide
     kapt libraryDependencies.glideKapt
-    implementation libraryDependencies.epoxy
-//    kapt libraryDependencies.epoxyKapt
-    implementation libraryDependencies.dagger
+    api libraryDependencies.epoxy
+//    kapt libraryDependencies.epoxyProcessor
+    api libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
 
     testImplementation testingDependencies.jUnit

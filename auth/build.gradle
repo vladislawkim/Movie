@@ -30,6 +30,8 @@ android {
         }
         release {
             minifyEnabled false
+            buildConfigField 'String', "API_KEY", TMDB_API_KEY
+            buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
         }
     }
 
@@ -40,18 +42,18 @@ android {
 }
 
 dependencies {
-    implementation project(":base")
+    api project(":base")
 
-    implementation libraryDependencies.kotlinStdlibJdk8
-    implementation libraryDependencies.kotlinCoroutines
-    implementation libraryDependencies.kotlinCoroutinesAndroid
-
-    implementation libraryDependencies.gson
-    implementation libraryDependencies.retrofit
-    implementation libraryDependencies.retrofitGsonConverter
-
-
-    implementation libraryDependencies.dagger
+//    implementation libraryDependencies.kotlinStdlibJdk8
+//    implementation libraryDependencies.kotlinCoroutines
+//    implementation libraryDependencies.kotlinCoroutinesAndroid
+//
+//    implementation libraryDependencies.gson
+//    implementation libraryDependencies.retrofit
+//    implementation libraryDependencies.retrofitGsonConverter
+//
+//
+//    implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
 }
 
