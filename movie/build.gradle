@@ -5,7 +5,6 @@ apply plugin: 'kotlin-android-extensions'
 
 kapt {
     correctErrorTypes = true
-    mapDiagnosticLocations = true
 }
 
 android {
@@ -43,23 +42,10 @@ android {
 
 dependencies {
     api project(":base")
-
-//    implementation libraryDependencies.kotlinStdlibJdk8
-//    implementation libraryDependencies.kotlinCoroutines
-//    implementation libraryDependencies.kotlinCoroutinesAndroid
-
+    api libraryDependencies.kotlinStdlibJdk8
     api libraryDependencies.instantApps
-
-//    implementation libraryDependencies.gson
-//    implementation libraryDependencies.retrofit
-//    implementation libraryDependencies.retrofitGsonConverter
-
     api libraryDependencies.overScrollList
-
-//    implementation libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
-//
-//    implementation libraryDependencies.epoxy
     kapt libraryDependencies.epoxyProcessor
 }
 

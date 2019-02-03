@@ -60,11 +60,12 @@ dependencies {
     api libraryDependencies.retrofit
     api libraryDependencies.retrofitGsonConverter
 
+    api libraryDependencies.overScrollList
     api libraryDependencies.ktx
     api libraryDependencies.glide
     kapt libraryDependencies.glideKapt
     api libraryDependencies.epoxy
-//    kapt libraryDependencies.epoxyProcessor
+    kapt libraryDependencies.epoxyProcessor
     api libraryDependencies.dagger
     kapt libraryDependencies.daggerCompiler
 
