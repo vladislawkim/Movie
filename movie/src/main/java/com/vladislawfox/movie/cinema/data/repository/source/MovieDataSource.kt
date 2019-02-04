@@ -13,4 +13,7 @@ import com.vladislawfox.movie.cinema.domain.Page
  */
 interface MovieDataSource {
     fun getPopularMovie(page: Int, @Languages.Locale language: String): Either<Failure, Page<MovieEntity>>
+    fun getTopMovie(page: Int, @Languages.Locale language: String): Either<Failure, Page<MovieEntity>>
+    fun getNowPlayingMovie(page: Int, @Languages.Locale language: String): Either<Failure, Page<MovieEntity>>
+    fun getUpcomingMovie(page: Int, @Languages.Locale language: String): Either<Failure, Page<MovieEntity>>
 }

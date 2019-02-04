@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.vladislawfox.base.presentation.di.HasComponent
 import com.vladislawfox.base.presentation.mvp.BaseFragment
 import com.vladislawfox.movie.R
-import com.vladislawfox.movie.cinema.domain.Movie
+import com.vladislawfox.movie.cinema.domain.model.Movie
 import com.vladislawfox.movie.cinema.presentation.contract.MovieContract
 import com.vladislawfox.movie.cinema.presentation.di.DaggerMovieComponent
 import com.vladislawfox.movie.cinema.presentation.di.MovieComponent
@@ -31,6 +31,10 @@ class MovieFragment : BaseFragment<MovieContract.View, MovieContract.Presenter, 
 
     override fun showData(list: List<Movie>) {
         movieController.setData(MoviesWrapper(list), ProgressWrapper())
+    }
+
+    override fun showData(movies: MoviesWrapper) {
+        movieController.setData(movies, ProgressWrapper())
     }
 
     override fun initializeInjector() {

@@ -1,7 +1,7 @@
 package com.vladislawfox.movie.di.activity
 
 import android.content.Context
-import com.vladislawfox.movie.cinema.domain.MovieRepository
+import com.vladislawfox.movie.cinema.domain.repository.MovieRepository
 
 /**
  * Created by vladislawfox on 1/27/19.

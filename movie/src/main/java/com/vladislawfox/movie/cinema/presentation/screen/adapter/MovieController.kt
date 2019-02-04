@@ -7,7 +7,7 @@ import com.airbnb.epoxy.Typed2EpoxyController
 import com.vladislawfox.base.presentation.adapter.carouselView
 import com.vladislawfox.base.presentation.extension.withModelsFrom
 import com.vladislawfox.movie.R
-import com.vladislawfox.movie.cinema.domain.Movie
+import com.vladislawfox.movie.cinema.domain.model.Movie
 import com.vladislawfox.movie.cinema.presentation.screen.adapter.holder.MovieViewModel_
 import com.vladislawfox.movie.cinema.presentation.screen.adapter.holder.headerView
 import com.vladislawfox.movie.cinema.presentation.screen.model.MoviesWrapper
@@ -31,44 +31,49 @@ const val CAROUSEL_UPCOMING_ID = "MovieController.CAROUSEL_UPCOMING_ID"
 
 class MovieController @Inject constructor() : Typed2EpoxyController<MoviesWrapper, ProgressWrapper>() {
 
-    var movieClickListener: MovieClickListener? = null
+  var movieClickListener: MovieClickListener? = null
 
-    override fun buildModels(movies: MoviesWrapper, progresses: ProgressWrapper) {
-        if (movies.popularMovie.isNotEmpty()) buildMovieBlock(
-            HEADER_POPULAR_ID,
-            R.string.popular_movie_title,
-            CAROUSEL_POPULAR_ID,
-            movies.popularMovie
-        )
-//    if (movies.topMovie.isNotEmpty()) buildMovieBlock(HEADER_TOP_ID, R.string.top_movie_title, CAROUSEL_TOP_ID, movies.topMovie)
-//    if (movies.nowMovie.isNotEmpty()) buildMovieBlock(HEADER_NOW_ID, R.string.now_movie_title, CAROUSEL_NOW_ID, movies.nowMovie)
-//    if (movies.upcomingMovie.isNotEmpty()) buildMovieBlock(HEADER_UPCOMING_ID, R.string.upcoming_movie_title, CAROUSEL_UPCOMING_ID, movies.upcomingMovie)
-    }
+  override fun buildModels(movies: MoviesWrapper, progresses: ProgressWrapper) {
+    if (!movies.popularMovie.isNullOrEmpty()) buildMovieBlock(
+        HEADER_POPULAR_ID,
+        R.string.popular_movie_title,
+        CAROUSEL_POPULAR_ID,
+        movies.popularMovie!!
+    )
+    if (!movies.popularMovie.isNullOrEmpty()) buildMovieBlock(HEADER_TOP_ID, R.string.top_movie_title,
+        CAROUSEL_TOP_ID, movies.topMovie!!)
+    if (!movies.popularMovie.isNullOrEmpty()) buildMovieBlock(HEADER_NOW_ID, R.string.now_movie_title,
+        CAROUSEL_NOW_ID, movies.nowMovie!!)
+    if (!movies.popularMovie.isNullOrEmpty()) buildMovieBlock(HEADER_UPCOMING_ID,
+        R.string.upcoming_movie_title, CAROUSEL_UPCOMING_ID, movies.upcomingMovie!!)
+  }
 
-    private fun buildMovieBlock(
-        headerId: String, @StringRes headerTitle: Int,
-        carouselId: String,
-        movies: List<Movie>
-    ) {
-        headerView {
-            id(headerId)
-            titleRes(headerTitle)
-        }
-        carouselView {
-            id(carouselId)
-            hasFixedSize(true)
-            onBind { _, view, _ -> OverScrollDecoratorHelper.setUpOverScroll(view, RecyclerView.VERTICAL) }
-            paddingDp(16)
-            withModelsFrom(movies) {
-                MovieViewModel_()
-                    .id(it.id)
-                    .photoUri(Uri.parse("https://image.tmdb.org/t/p/original/${it.posterPath}"))
-                    .onMovieClickListener { _, _, _, _ -> movieClickListener?.onMovieClick(it) }
-            }
-        }
+  private fun buildMovieBlock(
+      headerId: String, @StringRes headerTitle: Int,
+      carouselId: String,
+      movies: List<Movie>
+  ) {
+    headerView {
+      id(headerId)
+      titleRes(headerTitle)
     }
+    carouselView {
+      id(carouselId)
+      hasFixedSize(true)
+      onBind { _, view, _ ->
+        OverScrollDecoratorHelper.setUpOverScroll(view, RecyclerView.VERTICAL)
+      }
+      paddingDp(16)
+      withModelsFrom(movies) {
+        MovieViewModel_()
+            .id(it.id)
+            .photoUri(Uri.parse("https://image.tmdb.org/t/p/original/${it.posterPath}"))
+            .onMovieClickListener { _, _, _, _ -> movieClickListener?.onMovieClick(it) }
+      }
+    }
+  }
 }
 
 interface MovieClickListener {
-    fun onMovieClick(movie: Movie)
+  fun onMovieClick(movie: Movie)
 }

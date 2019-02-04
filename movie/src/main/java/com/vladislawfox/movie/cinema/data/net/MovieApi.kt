@@ -10,8 +10,24 @@ import retrofit2.http.Query
  */
 
 const val POPULAR_MOVIE_ENDPOINT = "/3/movie/popular"
+const val TOP_MOVIE_ENDPOINT = "/3/movie/top_rated"
+const val NOW_MOVIE_ENDPOINT = "/3/movie/now_playing"
+const val UPCOMING_MOVIE_ENDPOINT = "/3/movie/upcoming"
 
 interface MovieApi {
-    @GET(POPULAR_MOVIE_ENDPOINT)
-    fun getPopularMovie(@Query("page") page: Int, @Query("language") language: String): Call<MoviesResponse>
+  @GET(POPULAR_MOVIE_ENDPOINT)
+  fun getPopularMovie(@Query("page") page: Int, @Query(
+      "language") language: String): Call<MoviesResponse>
+
+  @GET(TOP_MOVIE_ENDPOINT)
+  fun getTopMovie(@Query("page") page: Int, @Query(
+      "language") language: String): Call<MoviesResponse>
+
+  @GET(NOW_MOVIE_ENDPOINT)
+  fun getNowPlayingMovie(@Query("page") page: Int, @Query(
+      "language") language: String): Call<MoviesResponse>
+
+  @GET(UPCOMING_MOVIE_ENDPOINT)
+  fun getUpcomingMovie(@Query("page") page: Int, @Query(
+      "language") language: String): Call<MoviesResponse>
 }

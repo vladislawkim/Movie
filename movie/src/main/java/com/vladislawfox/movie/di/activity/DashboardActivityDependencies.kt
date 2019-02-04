@@ -2,7 +2,7 @@ package com.vladislawfox.movie.di.activity
 
 import com.vladislawfox.base.data.storage.PreferenceUtils
 import com.vladislawfox.base.presentation.platform.NetworkHandler
-import com.vladislawfox.movie.cinema.domain.MovieRepository
+import com.vladislawfox.movie.cinema.domain.repository.MovieRepository
 import retrofit2.Retrofit
 
 /**

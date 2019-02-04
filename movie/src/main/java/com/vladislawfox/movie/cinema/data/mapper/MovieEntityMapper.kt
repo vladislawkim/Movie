@@ -2,7 +2,7 @@ package com.vladislawfox.movie.cinema.data.mapper
 
 import com.vladislawfox.base.domain.mapper.Mapper
 import com.vladislawfox.movie.cinema.data.model.MovieEntity
-import com.vladislawfox.movie.cinema.domain.Movie
+import com.vladislawfox.movie.cinema.domain.model.Movie
 import javax.inject.Inject
 
 /**
@@ -29,21 +29,21 @@ class MovieEntityMapper @Inject constructor() : Mapper<MovieEntity, Movie>() {
     }
 
     override fun map(from: MovieEntity): Movie = from.run {
-        Movie(
-            overview,
-            originalLanguage,
-            originalTitle,
-            video,
-            title,
-            genreIds,
-            posterPath,
-            backdropPath,
-            releaseDate,
-            popularity,
-            voteAverage,
-            id,
-            adult,
-            voteCount
-        )
+      Movie(
+          overview,
+          originalLanguage,
+          originalTitle,
+          video,
+          title,
+          genreIds,
+          posterPath,
+          backdropPath,
+          releaseDate,
+          popularity,
+          voteAverage,
+          id,
+          adult,
+          voteCount
+      )
     }
 }

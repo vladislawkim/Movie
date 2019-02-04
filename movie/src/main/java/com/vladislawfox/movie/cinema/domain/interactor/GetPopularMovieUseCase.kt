@@ -1,8 +1,12 @@
-package com.vladislawfox.movie.cinema.domain
+package com.vladislawfox.movie.cinema.domain.interactor
 
 import com.vladislawfox.base.domain.exception.Failure
 import com.vladislawfox.base.domain.functional.Either
 import com.vladislawfox.base.domain.interactor.UseCase
+import com.vladislawfox.movie.cinema.domain.Languages
+import com.vladislawfox.movie.cinema.domain.Page
+import com.vladislawfox.movie.cinema.domain.model.Movie
+import com.vladislawfox.movie.cinema.domain.repository.MovieRepository
 import javax.inject.Inject
 
 /**

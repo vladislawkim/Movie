@@ -1,4 +1,4 @@
-package com.vladislawfox.movie.cinema.domain
+package com.vladislawfox.movie.cinema.domain.model
 
 /**
  * Created by vladislawfox on 2/4/19.
