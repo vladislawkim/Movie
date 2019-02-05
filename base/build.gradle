@@ -23,13 +23,17 @@ android {
         debug {
             minifyEnabled false
             useProguard false
+            debuggable true
             buildConfigField 'String', "API_KEY", TMDB_API_KEY
             buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3/\""
+            resValue "string" , "app_name", "Movie Developer"
         }
         release {
+            resValue "string" , "app_name", "Movie"
             buildConfigField 'String', "API_KEY", TMDB_API_KEY
             buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
-            minifyEnabled false
+            minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.Typed2EpoxyController
 import com.vladislawfox.base.presentation.adapter.carouselView
 import com.vladislawfox.base.presentation.extension.withModelsFrom
-import com.vladislawfox.movie.R
+import com.vladislawfox.base.R
 import com.vladislawfox.movie.cinema.domain.model.Movie
 import com.vladislawfox.movie.cinema.presentation.screen.adapter.holder.MovieViewModel_
 import com.vladislawfox.movie.cinema.presentation.screen.adapter.holder.headerView

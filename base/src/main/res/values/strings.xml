@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Movie</string>
     <string name="auth_header_title">Login</string>
     <string name="auth_register">Register</string>
     <string name="auth_dont_account">Don`t have an account?</string>
