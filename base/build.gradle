@@ -30,7 +30,7 @@ android {
         }
         release {
             resValue "string" , "app_name", "Movie"
-            buildConfigField 'String', "API_KEY", TMDB_API_KEY
+            buildConfigField 'String', "API_KEY", ""
             buildConfigField 'String', "BASE_URL", "\"https://api.themoviedb.org/3\""
             minifyEnabled true
             useProguard true
