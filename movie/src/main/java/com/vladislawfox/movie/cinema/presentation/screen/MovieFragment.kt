@@ -1,7 +1,9 @@
 package com.vladislawfox.movie.cinema.presentation.screen
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.vladislawfox.base.presentation.di.HasComponent
+import com.vladislawfox.base.presentation.extension.bindView
 import com.vladislawfox.base.presentation.mvp.BaseFragment
 import com.vladislawfox.movie.R
 import com.vladislawfox.movie.cinema.domain.model.Movie
@@ -19,14 +21,14 @@ class MovieFragment : BaseFragment<MovieContract.View, MovieContract.Presenter, 
     R.layout.fragment_movie
 ), MovieContract.View {
 
-    @Inject
-    lateinit var movieController: MovieController
+    @Inject lateinit var movieController: MovieController
+    private val moviesListView: RecyclerView by bindView(R.id.viewMovieList)
 
     override fun onResume() {
         super.onResume()
         presenter.requestData()
-        viewMovieList.layoutManager = LinearLayoutManager(context)
-        viewMovieList.adapter = movieController.adapter
+        moviesListView.layoutManager = LinearLayoutManager(context)
+        moviesListView.adapter = movieController.adapter
     }
 
     override fun showData(list: List<Movie>) {
