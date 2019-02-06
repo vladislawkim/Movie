@@ -67,7 +67,9 @@ class MovieController @Inject constructor() : Typed2EpoxyController<MoviesWrappe
       withModelsFrom(movies) {
         MovieViewModel_()
             .id(it.id)
-            .photoUri(Uri.parse("https://image.tmdb.org/t/p/original/${it.posterPath}"))
+            .movieTitle(it.title)
+            .movieRate(it.voteAverage)
+            .photoUri(Uri.parse("https://image.tmdb.org/t/p/w500/${it.posterPath}"))
             .onMovieClickListener { _, _, _, _ -> movieClickListener?.onMovieClick(it) }
       }
     }

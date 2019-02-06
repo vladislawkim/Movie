@@ -3,9 +3,11 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:paddingTop="36dp"
 		android:paddingBottom="36dp"
 		app:layout_scrollFlags="scroll|enterAlways"
+		tools:background="@color/colorPrimary"
 		>
 
 	<androidx.constraintlayout.widget.Guideline
@@ -33,13 +35,12 @@
 			android:layout_height="0dp"
 			android:layout_marginStart="@dimen/size_20"
 			android:ellipsize="end"
-			android:fontFamily="@font/medium"
 			android:gravity="center_vertical|start"
 			android:includeFontPadding="false"
 			android:singleLine="true"
 			android:text="vladislawfox"
-			android:textColor="@color/black"
-			android:textSize="@dimen/text_size_13"
+			android:textColor="@color/white_alpha_60"
+			style="@style/App.Light.TextView.Subtitle2"
 			app:layout_constraintBottom_toBottomOf="@+id/viewToolbarUserAvatar"
 			app:layout_constraintEnd_toStartOf="@+id/guideline"
 			app:layout_constraintStart_toEndOf="@+id/viewToolbarUserAvatar"
@@ -55,15 +56,14 @@
 			android:drawableStart="@drawable/ic_search_24dp"
 			android:fontFamily="@font/medium"
 			android:gravity="center_vertical"
-			android:includeFontPadding="false"
+			android:textColor="@color/white_alpha_60"
 			android:padding="@dimen/size_8"
 			android:text="Search..."
-			android:textColor="@color/black_alpha_60"
-			android:textSize="@dimen/text_size_13"
-			app:layout_constraintBottom_toBottomOf="@+id/viewToolbarUserAvatar"
+			style="@style/App.Light.TextView.Overline"
+			app:layout_constraintBottom_toBottomOf="@id/viewToolbarUserAvatar"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="@+id/guideline"
-			app:layout_constraintTop_toTopOf="@+id/viewToolbarUserAvatar"
+			app:layout_constraintStart_toStartOf="@id/guideline"
+			app:layout_constraintTop_toTopOf="@id/viewToolbarUserAvatar"
 			/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,13 @@ package com.vladislawfox.base.presentation.adapter
 import android.content.Context
 import android.graphics.Color
 import android.view.Gravity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.airbnb.epoxy.Carousel
 import com.airbnb.epoxy.ModelView
+import com.vladislawfox.base.R
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 
 /**
@@ -19,7 +21,7 @@ open class CarouselView(context: Context) : Carousel(context) {
   private lateinit var linearLayoutManager: LinearLayoutManager
 
   override fun init() {
-    setBackgroundColor(Color.TRANSPARENT)
+    setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
     Carousel.setDefaultGlobalSnapHelperFactory(object : Carousel.SnapHelperFactory() {
       override fun buildSnapHelper(context: Context): SnapHelper {
         return GravitySnapHelper(Gravity.START, true)

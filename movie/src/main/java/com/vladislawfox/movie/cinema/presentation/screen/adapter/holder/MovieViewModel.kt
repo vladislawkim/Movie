@@ -3,6 +3,8 @@ package com.vladislawfox.movie.cinema.presentation.screen.adapter.holder
 import android.net.Uri
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyAttribute.Option.DoNotHash
 import com.airbnb.epoxy.EpoxyModelClass
@@ -19,6 +21,8 @@ import com.vladislawfox.movie.R
 @EpoxyModelClass
 abstract class MovieViewModel : EpoxyModelWithHolder<MovieHolder>() {
   @EpoxyAttribute lateinit var photoUri: Uri
+  @EpoxyAttribute var movieRate: Double = 0.0
+  @EpoxyAttribute lateinit var movieTitle: String
   @EpoxyAttribute(DoNotHash) lateinit var onMovieClickListener: View.OnClickListener
   override fun getDefaultLayout(): Int = R.layout.view_movie_model
 
@@ -26,6 +30,8 @@ abstract class MovieViewModel : EpoxyModelWithHolder<MovieHolder>() {
     with(holder) {
       imageView.setOnClickListener(onMovieClickListener)
       ImageUtils.loadingPhoto(imageView, photoUri)
+      rateText.text = movieRate.toString()
+      titleText.text = movieTitle
     }
   }
 
@@ -39,4 +45,6 @@ abstract class MovieViewModel : EpoxyModelWithHolder<MovieHolder>() {
 
 class MovieHolder : BaseHolder() {
   val imageView by bind<ImageView>(R.id.view_movie_model_image)
+  val rateText by bind<AppCompatTextView>(R.id.view_movie_model_rate)
+  val titleText by bind<AppCompatTextView>(R.id.view_movie_model_title)
 }

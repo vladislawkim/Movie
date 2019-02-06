@@ -1,11 +1,168 @@
 <resources>
 
-	<!-- Base application theme. -->
-	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-		<!-- Customize your theme here. -->
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
-	</style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="App"/>
+    <style name="App.Light"/>
+    <style name="App.Dark"/>
+
+    <style name="App.Dark.TextView" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="App.Light.TextView" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="App.Light.TextView.Headline1">
+        <item name="android:textSize">@dimen/text_headline1</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">-1.5</item>
+    </style>
+    <style name="App.Light.TextView.Headline2">
+        <item name="android:textSize">@dimen/text_headline2</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">-0.5</item>
+    </style>
+    <style name="App.Light.TextView.Headline3">
+        <item name="android:textSize">@dimen/text_headline3</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="App.Light.TextView.Headline4">
+        <item name="android:textSize">@dimen/text_headline4</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+    <style name="App.Light.TextView.Headline5">
+        <item name="android:textSize">@dimen/text_headline5</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="App.Light.TextView.Headline6">
+        <item name="android:textSize">@dimen/text_headline6</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="App.Light.TextView.Subtitle1">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+    <style name="App.Light.TextView.Subtitle2">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="App.Light.TextView.Body1">
+        <item name="android:textSize">@dimen/text_headline6</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.5</item>
+    </style>
+    <style name="App.Light.TextView.Body2">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+
+    <style name="App.Light.TextView.Button">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">1.25</item>
+    </style>
+
+    <style name="App.Light.TextView.Caption">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="App.Light.TextView.Overline">
+        <item name="android:textSize">@dimen/text_tiny</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.3</item>
+    </style>
+
+    <style name="App.Dark.TextView.Headline1">
+        <item name="android:textSize">@dimen/text_headline1</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">-1.5</item>
+    </style>
+    <style name="App.Dark.TextView.Headline2">
+        <item name="android:textSize">@dimen/text_headline2</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">-0.5</item>
+    </style>
+    <style name="App.Dark.TextView.Headline3">
+        <item name="android:textSize">@dimen/text_headline3</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="App.Dark.TextView.Headline4">
+        <item name="android:textSize">@dimen/text_headline4</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+    <style name="App.Dark.TextView.Headline5">
+        <item name="android:textSize">@dimen/text_headline5</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="App.Dark.TextView.Headline6">
+        <item name="android:textSize">@dimen/text_headline6</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="App.Dark.TextView.Subtitle1">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+    <style name="App.Dark.TextView.Subtitle2">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="App.Dark.TextView.Body1">
+        <item name="android:textSize">@dimen/text_headline6</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.5</item>
+    </style>
+    <style name="App.Dark.TextView.Body2">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+
+    <style name="App.Dark.TextView.Button">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:letterSpacing">1.25</item>
+    </style>
+
+    <style name="App.Dark.TextView.Caption">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="App.Dark.TextView.Overline">
+        <item name="android:textSize">@dimen/text_tiny</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:letterSpacing">0.3</item>
+    </style>
 
 </resources>
