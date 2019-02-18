@@ -24,7 +24,7 @@ ext {
     //Dagger
     daggerVersion = '2.16'
     //Epoxy
-    epoxyVersion = '3.2.0'
+    epoxyVersion = '3.3.0'
     //Retrofit
     retrofitVersion = '2.4.0'
     //Kotlin
